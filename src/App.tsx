@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { NavBar }  from "./componets/navbar/navbar";
+import { MenuBar } from "./componets/navbar/menubar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [isOpen,setisOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">AI Component Builder</h1>
-        <p className="text-gray-400">Project setup complete. Ready for Class 2.</p>
+    <div className="h-screen bg-[#020617] text-white">
+      <NavBar setisOpen = {setisOpen}/>
+      <MenuBar setisOpen={setisOpen} isOpen={isOpen}/>
+      <div className="flex h-screen">
+        <div className="flex-2 bg-red-400">Left</div>
+        <div className="flex-4 bg-blue-400">Middle</div>
+        <div className="flex-2 bg-green-400">Right</div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
